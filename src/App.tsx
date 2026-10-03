@@ -30,9 +30,10 @@ export default function App() {
   return (
     <div ref={root} id="top" style={{ position: 'relative', background: '#0e0d0c', color: '#ede9e2', minHeight: '100vh', overflowX: 'clip' }}>
       <div aria-hidden="true" style={{ position: 'fixed', inset: 0, zIndex: 110, pointerEvents: 'none', opacity: 0.07, mixBlendMode: 'overlay', backgroundImage: GRAIN }} />
+      <a href="#main" className="skip">Skip to content</a>
       <div inert={open != null}>
       <Nav />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
         <About />
         <Work onOpen={openCase} />

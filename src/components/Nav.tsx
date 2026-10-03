@@ -38,6 +38,7 @@ export default function Nav() {
       let hide = s.hidden
       if (v > 3 && y > vh) hide = true
       else if (v < -3 || y < vh) hide = false
+      if (n.contains(document.activeElement)) hide = false // keyboard focus must never land on an off-screen link
       if (hide !== s.hidden) { s.hidden = hide; n.style.transform = hide ? 'translate3d(0,-100%,0)' : 'none' }
     }
     if (progress.current) progress.current.style.transform = `scaleX(${clamp(y / Math.max(1, document.documentElement.scrollHeight - vh)).toFixed(4)})`
